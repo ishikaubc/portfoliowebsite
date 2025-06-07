@@ -9,6 +9,11 @@ import wildifireanalysis from "@/public/images/wildfireanalysis.png"
 import ubclogo from "@/public/images/ubclogo.png"
 import geeringuplogo from "@/public/images/geeringuplogo.png"
 import codeinitiative from "@/public/images/codeinitiative.png"
+import mysqllogo from "@/public/images/mysqllogo.png"
+import Rlogo from "@/public/images/R_logo.svg.png"
+import NestJSlogo from "@/public/images/nestjslogo.png"
+import PostgresLogo from "@/public/images/postgres.png"
+import Langchainlogo from "@/public/images/langchain.png"
 import fairshareLogo from "@/public/images/fairshare_logo_2.png"
 import calendargramLogo from "@/public/images/calendargram_logo.png"
 import snugStayLogo from "@/public/images/snugStaySystems_logo.png"
@@ -230,4 +235,26 @@ export const skillsData = [
         logo: docker,
         text: "Docker"
     },
+    {
+        logo: mysqllogo,
+        text: "MySQL"
+    },
+    {
+        logo: Rlogo,
+        text: "R"
+    },
+    {
+        logo: NestJSlogo,
+        text: "Nest.js"
+    },
+    {
+        logo: PostgresLogo,
+        text: "PostgreSQL"
+    },
+    {
+        logo: Langchainlogo,
+        text: "LangChain"
+    }
+
+
 ] as const;
