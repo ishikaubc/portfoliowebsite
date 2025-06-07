@@ -9,6 +9,7 @@ import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
 
+
 const imageStyle = {
   borderRadius: "100%",
   border: "1px solid #000000",

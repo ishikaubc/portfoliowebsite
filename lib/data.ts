@@ -1,9 +1,15 @@
 import React from "react";
 import { LuGraduationCap } from "react-icons/lu";
-import studySparkLogo from "@/public/images/study_spark_logo_2.png"
+import advisorailogo from "@/public/images/advisorAIlogo.png"
 import websiteLogo from "@/public/images/atom.png"
+import owlmarklogo from "@/public/images/owlmarklogo.png"
+import smartbiteslogo from "@/public/images/smartbites-2-removebg-preview.png"
+import panchangapilogo from "@/public/images/panchangapilogo.png"
+import wildifireanalysis from "@/public/images/wildfireanalysis.png"
+import ubclogo from "@/public/images/ubclogo.png"
+import geeringuplogo from "@/public/images/geeringuplogo.png"
+import codeinitiative from "@/public/images/codeinitiative.png"
 import fairshareLogo from "@/public/images/fairshare_logo_2.png"
-import netfitLogo from "@/public/images/netfit_logo.png"
 import calendargramLogo from "@/public/images/calendargram_logo.png"
 import snugStayLogo from "@/public/images/snugStaySystems_logo.png"
 import picamyLogo from "@/public/images/picamy_logo.png"
@@ -29,6 +35,7 @@ import ruby from "@/public/skills_logo/ruby.jpeg"
 import scala from "@/public/skills_logo/scala.png"
 import tailwind from "@/public/skills_logo/tailwind.png"
 import flink from "@/public/skills_logo/flink.jpeg"
+import makerspacelogo from "@/public/images/makerspacelogo.png";
 
 
 
@@ -66,100 +73,110 @@ export const links = [
 
 export const experiencesData = [
     {
-        name: "University of Calgary",
+        name: "University of British Columbia",
         title: "BSc Computer Science",
-        location: "Calgary, AB",
+        location: "Kelowna,BC",
         description:
-            "Computer Science Graduate",
+            "Major in Computer Science",
         icon: React.createElement(LuGraduationCap),
-        date: "Sept 2019 - May 2024",
-        logo: uofcLogo
+        date: "Sept 2020 - 2025",
+        logo: ubclogo
     },
     {
-        name: "Cisco",
-        title: "Software Engineer Intern",
-        location: "Calgary, AB",
+        name: "UBC Faculty of Science",
+        title: "Full Stack Engineer",
+        location: "Kelowna,BC",
         description:
-            "During my 16-month internship with the Cisco Secure Endpoint data team, I contributed to the development of high-throughput, fault-tolerant data streaming pipelines and scalable data storage solutions.",
+            "During my 6 internship with the UBC Directed Studies team, I contributed to the development of full stack application by designing the user and admin dashboard, and integrating payment system using Stripe.",
         icon: React.createElement(MdWorkOutline),
-        date: "June 2022 - Oct 2023",
-        logo: ciscoLogo
+        date: "Jan 2025 - May 2025",
+        logo: ubclogo
     },
     {
-        name: "Wealthsimple",
-        title: "Software Engineer Intern",
-        location: "Calgary, AB",
+        name: "UBC Faculty of Science",
+        title: "Generative AI Developer",
+        location: "Kelowna,BC",
         description:
-            "Software Engineer Intern on the Book of Records team",
+            "Worked on the Course Planner Website to integrate an AI Powered Course Advising bot",
         icon: React.createElement(MdWorkOutline),
-        date: "Jan 2025",
-        logo: wsLogo
+        date: "Sept 2024 - Dec 2024",
+        logo: ubclogo
     },
+    {
+        name: "UBC Geering Up Engineering Outreach",
+        title: "Programming Assistant",
+        location: "Vancouver,BC",
+        description:
+            "Programming Assistant for the UBC Geering Up Engineering team to assist students in learning programming and AI concepts through workshops and camps.",
+        icon: React.createElement(MdWorkOutline),
+        date: "May 2023 - Aug 2023",
+        logo: geeringuplogo
+    },
+    {
+        name: "The Code Initiative",
+        title: "Programming Instructor",
+        location: "Remote",
+        description:
+            "Programming Assistant for the Code Initiative team to teach students programming concepts like Java, Python, Web Development through interactive lessons",
+        icon: React.createElement(MdWorkOutline),
+        date: "Sept 2022-Apr 2023",
+        logo: codeinitiative
+    },
+
 
 ] as const;
 
 export const projectsData = [
 
     {
-        title: "NetFit",
+        title: "Makerspace Membership Management System",
         description:
-            "a social-media fitness app offering simple exercise tracking, progress pictures, a community for sharing workout inspiration and support " +
-            "and direct access to trainer content, encouraging and guiding users",
-        tags: ["React", "MongoDB", "Tailwind", "Javascript", "Node.js"],
-        imageUrl: netfitLogo,
-        githubLink: "https://github.com/ParthPatel100/NetFit"
+            "a full stack application for managing memberships, bookings, and payment for Makerspace in Yellowknife",
+        tags: ["Remix V7", "PostgreSQL", "Tailwind", "Typescript", "Node.js"],
+        imageUrl: makerspacelogo,
+        githubLink: "https://github.com/University-of-British-Columbia-Okanagan/MSYK_Membership.git"
     },
     {
-        title: "FairShare",
+        title: "Advisor AI - UBC Academic Advisor",
         description:
-            "Personal side project: A simple cost-splitting application to simplify the equitable sharing of shopping expenses among roommates, addressing the common challenge of dividing costs accurately.",
-        tags: ["Scala"],
-        imageUrl: fairshareLogo,
-        githubLink: "https://github.com/ParthPatel100/FairShare"
+            "AI powered academic advisor that uses LangChain framework to build a RAG system with a vector database to answer course related queries and provide academic advice.",
+        tags: ["React, Typescript, PostgreSQL, LangChain, OpenAI"],
+        imageUrl: advisorailogo,
+        githubLink: "https://github.com/engasa/CoursePlanner-Web.git"
+    },
+   
+    {
+        title: "OwlMark - Optical Marking Management System",
+        description:
+            "An Optical Marking Management System using Yolov8 for OCR based grading of multiple choice exams, with a dashboard interface for teachers to upload exams and students to view results.",
+        tags: ["NextJS", "NestJS", "MySQL", "Typescript", "Python"],
+        imageUrl: owlmarklogo,
+        githubLink: "https://github.com/UBCO-COSC499-Summer-2024/team-7-capstone-team-7-falcon.git"
     },
     {
-        title: "StudySpark",
+        title: "SmartBites",
         description:
-            "(In Progress) an AI study tool app to help students summarize notes using Amazon Textract as well as answer course related " +
-            "queries by leveraging the 'thenlper/gte-large' NLP model with an intelligent RAG indexing and retrieval " +
-            "and openai API calls to ChatGPT with refined queries.",
-        tags: ["Python", "Flask", "Supabase", "Tailwind", "Svelte"],
-        imageUrl: studySparkLogo,
-        githubLink: "https://github.com/ParthPatel100/study-spark-ai"
-    },
-    {
-        title: "CalendarGram",
-        description:
-            "A collaborative calendar application with integral data analytics, processing user data from completed tasks, " +
-            "events, and logged physical activities as well as traditional social media features such as post achievements",
-        tags: ["Javascript", "React"],
-        imageUrl: calendargramLogo,
-        githubLink: "https://github.com/ParthPatel100/Social-media-Project"
-    },
-    {
-        title: "SnugStay Systems",
-        description:
-            "A smart thermostat system for a hotel mainly focusing on distributed systems replication, communication, fault tolerance, data synchronization and consistency using DS algorithms dealing with Leader Election (Bully Algorithm), Critical Section - Leader based algorithm and Eventual Consistency model.",
-        tags: ["Java", "Spring", "React", "Kafka"],
-        imageUrl: snugStayLogo,
-        githubLink: "https://github.com/jayzk/Smart-Thermostat-System"
+            "A mobile app using React Native to gamify the purchase of sustainable food items, allowing users to earn points and rewards for making eco-friendly choices.",
+        tags: ["React Native", "OpenCV", "Supabase"],
+        imageUrl: smartbiteslogo,
+        githubLink: "https://github.com/ishikaubc/SmartBites.git"
     },
 
     {
-        title: "This Website",
+        title: "Panchang API Gateway",
         description:
-            "Built this website using React, Tailwind and Typescript and used Three.js to create interactive 3D geometries on the homepage",
-        tags: ["React", "Tailwind", "Typescript", "Three.js"],
-        imageUrl: websiteLogo,
+            " API Gateway for accessing Panchang (Hindu calendar) and Hindu festival data. This project is under active development and aims to provide secure and efficient public access to the core Panchang API used by the QuickPanchang macOS app.",
+        tags: ["Go", "Typescript", "Next JS"],
+        imageUrl: panchangapilogo,
         githubLink: "https://github.com/ParthPatel100/Website"
     },
     {
-        title: "Picamy",
+        title: "Wildifre Analysis - Prediction Modelling",
         description:
             "A simple photo library management application to handle the traditional image uploading, storing, deleting, sorting, and tagging with a unique marketplace for images, where users can buy and sell images.",
-        tags: ["React", "Tailwind", "NodeJS"],
-        imageUrl: picamyLogo,
-        githubLink: "https://github.com/sukh-lgtm/ProjectHCI"
+        tags: ["R", "Network Science", "Data Analysis"],
+        imageUrl: wildifireanalysis,
+        githubLink: "https://github.com/atharvaj0gtap/Network-Science-Team-4.git"
     },
 
 ] as const;
@@ -198,20 +215,8 @@ export const skillsData = [
         text: "Python"
     },
     {
-        logo: flask,
-        text: "Flask"
-    },
-    {
         logo: java,
         text: "Java"
-    },
-    {
-        logo: scala,
-        text: "Scala"
-    },
-    {
-        logo: akka,
-        text: "Akka"
     },
     {
         logo: aws,
@@ -222,23 +227,7 @@ export const skillsData = [
         text: "Ruby"
     },
     {
-        logo: kafka,
-        text: "Kafka"
-    },
-    {
-        logo: flink,
-        text: "Apache Flink"
-    },
-    {
-        logo: chef,
-        text: "Chef"
-    },
-    {
         logo: docker,
         text: "Docker"
-    },
-    {
-        logo: rabbitMQ,
-        text: "RabbitMQ"
     },
 ] as const;

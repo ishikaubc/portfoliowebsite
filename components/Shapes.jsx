@@ -12,6 +12,7 @@ import {
 import {gsap} from "gsap";
 import { a } from "@react-spring/three"
 import { TextureLoader } from 'three';
+import profilePic from "../public/images/profilepicture.png";
 
 
 
@@ -67,7 +68,7 @@ function Geometries() {
             r: 0.9,
             geometry: new THREE.BoxGeometry(2.2, 2.2, 2.2),
             materialOverride: new THREE.MeshStandardMaterial({
-              map: new TextureLoader().load("/images/profilepicture.JPG"),
+              map: new TextureLoader().load("/images/profilepicture.png"),
               roughness: 0.2,
               metalness: 0.5,
             }),
