@@ -11,6 +11,9 @@ import {
 } from "@react-three/drei";
 import {gsap} from "gsap";
 import { a } from "@react-spring/three"
+import { TextureLoader } from 'three';
+
+
 
 export function Shapes() {
     // const [dpr, setDpr] = useState(1.5)
@@ -59,6 +62,17 @@ function Geometries() {
             r: 0.8,
             geometry: new THREE.TorusGeometry(4.8, 0.4, 30, 100), // Donut
         },
+        {
+            position: [0, 0, 0],
+            r: 0.9,
+            geometry: new THREE.BoxGeometry(2.2, 2.2, 2.2),
+            materialOverride: new THREE.MeshStandardMaterial({
+              map: new TextureLoader().load("/images/profilepicture.JPG"),
+              roughness: 0.2,
+              metalness: 0.5,
+            }),
+          }
+          
     ];
 
 
@@ -87,18 +101,20 @@ function Geometries() {
         }),
     ];
 
-    return geometries.map(({ position, r, geometry }) => (
+    return geometries.map(({ position, r, geometry, materialOverride }) => (
         <Geometry
-            key={JSON.stringify(uniqueKey++)} // Unique key
-            position={position.map((p) => p * 2)}
-            geometry={geometry}
-            materials={materials}
-            r={r}
+          key={JSON.stringify(uniqueKey++)}
+          position={position.map((p) => p * 2)}
+          geometry={geometry}
+          materials={materials}
+          materialOverride={materialOverride}
+          r={r}
         />
-    ));
+      ));
 }
 
-function Geometry({ r, position, geometry, soundEffects, materials }) {
+function Geometry({ r, position, geometry, soundEffects, materials, materialOverride }) {
+    {
     const meshRef = useRef();
 
     const startingMaterial = getRandomMaterial();
@@ -152,9 +168,10 @@ function Geometry({ r, position, geometry, soundEffects, materials }) {
                     onPointerDown={handleClick}
                     onPointerOver={handlePointerOver}
                     onPointerOut={handlePointerOut}
-                    material={startingMaterial}
+                    material={materialOverride || startingMaterial}
                 ></a.mesh>
             </Float>
         </group>
     );
+}
 }
