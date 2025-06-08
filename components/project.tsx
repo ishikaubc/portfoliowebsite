@@ -77,7 +77,8 @@ export default function Project({
               translateZ="60"
               className="row-start-3 row-span-2 col-start-1 col-span-2 flex flex-col pt-4 pb-7 px-4 sm:pr-2 sm:pt-10 lg:col-start-2 lg:col-span-1 lg:row-start-1 lg:row-span-2"
             >
-              <h3 className="text-2xl font-semibold">{title}</h3>
+            <h3 className="text-2xl font-semibold text-black dark:text-black">{title}</h3>
+
               <p className="mt-[1.8rem] leading-relaxed text-gray-700">
                 {description}
               </p>

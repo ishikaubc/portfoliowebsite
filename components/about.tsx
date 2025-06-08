@@ -1,12 +1,9 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import profilePic from "../public/images/profilepicture.png";
 import SectionHeading from "@/components/section-heading";
-import { useInView } from "react-intersection-observer";
-import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
 
 
@@ -20,15 +17,18 @@ export default function About() {
 
   return (
     <motion.section
-      ref={ref}
-      className="mb-12 mx-4 max-w-[45rem] text-center leading-6 sm:mb-24 scroll-mt-[7rem] mt-20 "
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
-      id={"about"}
-    >
+  ref={ref}
+  className="mb-12 mx-4 max-w-[45rem] text-center leading-6 sm:mb-24 scroll-mt-[7rem] mt-20 
+             bg-white dark:bg-[#0a0e1a] dark:text-white/90 rounded-xl p-6 shadow-md transition-colors duration-300"
+  initial={{ opacity: 0, y: 100 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.175 }}
+  id="about"
+>
+
       <SectionHeading>About me</SectionHeading>
-      <div className="flex flex-col items-center gap-16 ">
+      <div className="flex flex-col items-center gap-16">
+        {/* Profile Picture */}
         <div className="relative flex justify-center items-center max-w-full h-fit">
           <Image
             src="/images/profilepicture.png"
@@ -36,12 +36,13 @@ export default function About() {
             quality={95}
             width={275}
             height={275}
-            className="rounded-full border border-black object-cover aspect-square"
+            className="rounded-full border border-black dark:border-white/60 object-cover aspect-square"
           />
         </div>
 
-        <div className="text-left flex flex-col gap-4">
-          <p className="text-left">
+        {/* About Text */}
+        <div className="text-left flex flex-col gap-4 text-black dark:text-white/90">
+          <p>
             Hey there! I'm <span className="font-bold">Ishika Agarwal</span>, a
             final-year Computer Science student at the
             <span className="font-bold"> University of British Columbia</span>,

@@ -4,9 +4,9 @@ import "./globals.css";
 import Header from "@/components/header";
 import React from "react";
 import ActiveSectionContextProvider from "@/context/active-section-context";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/components/footer";
-
+import DarkModeToggle from "@/components/darkmodetoggle";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,19 +21,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="en" className="!scroll-smooth">
-      <body className={`${inter.className} bg-neutral-50 text-black`}>
-
-
-      <ActiveSectionContextProvider>
-          <Header/>
+    <html lang="en" className="!scroll-smooth">
+      <body
+        className={`
+    ${inter.className} 
+    text-black dark:text-white
+    bg-gradient-to-br from-teal-50 to-rose-50
+    dark:bg-gradient-to-b dark:from-[#0f0f0f] dark:via-[#111827] dark:to-[#1f2937]
+    transition-colors duration-500
+  `}
+      >
+        <ActiveSectionContextProvider>
+          <Header />
           {children}
-          <Footer/>
-      </ActiveSectionContextProvider>
+          <Footer />
+        </ActiveSectionContextProvider>
 
-
-      <Analytics/>
+        <DarkModeToggle />
+        <Analytics />
       </body>
-      </html>
+    </html>
   );
 }
