@@ -11,6 +11,8 @@ import React, { useRef, useState } from "react";
 import Link from "next/link";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Modal from "@/components/ui/modal";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+
 
 // Extend ProjectProps
 export type ProjectProps = (typeof projectsData)[number] & {
@@ -103,14 +105,15 @@ export default function Project({
                   <Link href={demolink} passHref target="_blank">
 
                     <button className="bg-gradient-to-r from-gray-400 to-gray-600 text-white px-4 py-1 rounded-full text-sm shadow-md hover:scale-105 transition">
-                    <FontAwesomeIcon icon={faPlay} className="mr-2" />Demo
+                    <FontAwesomeIcon icon={faPlay as IconProp} className="mr-2" />Demo
+
                     </button>
                   </Link>
                 )}
                 {researchPaper && (
                   <Link href={researchPaper} passHref target="_blank">
                    <button className="bg-gradient-to-r from-gray-400 to-gray-600 text-white px-4 py-1 rounded-full text-sm shadow-md hover:scale-105 transition">
-                   <FontAwesomeIcon icon={faReadme} className="mr-2" />Read Paper
+                   <FontAwesomeIcon icon={faReadme as IconProp} className="mr-2" />Read Paper
                     </button>
                   </Link>
                 )}
