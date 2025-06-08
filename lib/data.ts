@@ -216,7 +216,7 @@ export const projectsData = [
     researchPaper:
       "https://drive.google.com/file/d/1yAIcMEY0g6fWvmvKS8_H1MLoHQ-7eZdJ/view?usp=sharing",
   },
-] as const;
+] 
 
 export const skillsData = [
   {
