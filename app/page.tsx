@@ -6,6 +6,7 @@ import About from "@/components/about";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
 import Experience from "@/components/experience";
+import Gallery from "@/components/gallery";
 
 import Contact from "@/components/contact";
 
@@ -31,6 +32,7 @@ export default function Home() {
             <Skills/>
             <Experience/>
             <Contact/>
+            <Gallery/>
 
         </main>
     );

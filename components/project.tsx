@@ -4,17 +4,18 @@ import { projectsData } from "@/lib/data";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faReadme } from "@fortawesome/free-brands-svg-icons";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import React, { useRef, useState } from "react";
 import Link from "next/link";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
-import Modal from "@/components/ui/modal"; // Create this component
+import Modal from "@/components/ui/modal";
 
-// Modify ProjectProps to accept an array of image URLs
-
+// Extend ProjectProps
 export type ProjectProps = (typeof projectsData)[number] & {
   gallery?: string[];
+  researchPaper?: string;
 };
 
 export default function Project({
@@ -25,6 +26,7 @@ export default function Project({
   gallery = [],
   githubLink,
   demolink,
+  researchPaper,
 }: ProjectProps) {
   const imageStyle = {
     borderRadius: "2rem",
@@ -98,8 +100,16 @@ export default function Project({
                 </Link>
                 {demolink && (
                   <Link href={demolink} passHref target="_blank">
-                    <button className="bg-blue-600 text-white px-4 py-1 rounded-lg text-sm hover:bg-blue-700 transition">
-                      Live Demo
+
+                    <button className="bg-gradient-to-r from-gray-400 to-gray-600 text-white px-4 py-1 rounded-full text-sm shadow-md hover:scale-105 transition">
+                    <FontAwesomeIcon icon={faPlay} className="mr-2" />Demo
+                    </button>
+                  </Link>
+                )}
+                {researchPaper && (
+                  <Link href={researchPaper} passHref target="_blank">
+                   <button className="bg-gradient-to-r from-gray-400 to-gray-600 text-white px-4 py-1 rounded-full text-sm shadow-md hover:scale-105 transition">
+                   <FontAwesomeIcon icon={faReadme} className="mr-2" />Read Paper
                     </button>
                   </Link>
                 )}
