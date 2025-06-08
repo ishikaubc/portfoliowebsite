@@ -18,8 +18,6 @@ export default function Project({
                                     tags,
                                     imageUrl,
                                     githubLink,
-                                    demolink,
-                                    researchpaper
                                 }: ProjectProps){
     const imageStyle = {
         borderRadius: '2rem',

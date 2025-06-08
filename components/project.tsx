@@ -16,6 +16,7 @@ import Modal from "@/components/ui/modal";
 export type ProjectProps = (typeof projectsData)[number] & {
   gallery?: string[];
   researchPaper?: string;
+  demolink?: string;
 };
 
 export default function Project({
@@ -23,7 +24,7 @@ export default function Project({
   description,
   tags,
   imageUrl,
-  gallery = [],
+  gallery,
   githubLink,
   demolink,
   researchPaper,
