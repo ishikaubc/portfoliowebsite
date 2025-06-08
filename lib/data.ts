@@ -1,6 +1,7 @@
 import React from "react";
 import { LuGraduationCap } from "react-icons/lu";
 import advisorailogo from "@/public/images/advisorAIlogo.png"
+
 import websiteLogo from "@/public/images/atom.png"
 import owlmarklogo from "@/public/images/owlmarklogo.png"
 import smartbiteslogo from "@/public/images/smartbites-2-removebg-preview.png"
@@ -147,7 +148,8 @@ export const projectsData = [
             "AI powered academic advisor that uses LangChain framework to build a RAG system with a vector database to answer course related queries and provide academic advice.",
         tags: ["React, Typescript, PostgreSQL, LangChain, OpenAI"],
         imageUrl: advisorailogo,
-        githubLink: "https://github.com/engasa/CoursePlanner-Web.git"
+        githubLink: "https://github.com/engasa/CoursePlanner-Web.git",
+        demolink: "https://drive.google.com/file/d/1P_kFl1A2rmVnBLAhEDmQ_GI0R12Awjtb/view?usp=share_link"
     },
    
     {

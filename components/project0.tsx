@@ -17,7 +17,8 @@ export default function Project({
                                     description,
                                     tags,
                                     imageUrl,
-                                    githubLink
+                                    githubLink,
+                                    demolink
                                 }: ProjectProps){
     const imageStyle = {
         borderRadius: '2rem',
