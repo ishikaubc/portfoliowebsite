@@ -4,6 +4,8 @@ import advisorailogo from "@/public/images/advisorAIlogo.png"
 
 import websiteLogo from "@/public/images/atom.png"
 import owlmarklogo from "@/public/images/owlmarklogo.png"
+import opticalmarkinglogo from "@/public/images/Optical Marking Image.png"
+import makerspaceimg1 from "@/public/images/makerspaceimg1.png"
 import smartbiteslogo from "@/public/images/smartbites-2-removebg-preview.png"
 import panchangapilogo from "@/public/images/panchangapilogo.png"
 import wildifireanalysis from "@/public/images/wildfireanalysis.png"
@@ -140,7 +142,9 @@ export const projectsData = [
             "a full stack application for managing memberships, bookings, and payment for Makerspace in Yellowknife",
         tags: ["Remix V7", "PostgreSQL", "Tailwind", "Typescript", "Node.js"],
         imageUrl: makerspacelogo,
-        githubLink: "https://github.com/University-of-British-Columbia-Okanagan/MSYK_Membership.git"
+        githubLink: "https://github.com/University-of-British-Columbia-Okanagan/MSYK_Membership.git",
+        demolink: "https://drive.google.com/file/d/1rBCEwMCF4ckvEcHo13yH7E9NdRkAlETd/view?usp=share_link",
+        gallery: ["/images/makerspaceimg1.png","/images/makerspaceimg2.png","/images/paymentms.png"]
     },
     {
         title: "Advisor AI - UBC Academic Advisor",
@@ -157,8 +161,9 @@ export const projectsData = [
         description:
             "An Optical Marking Management System using Yolov8 for OCR based grading of multiple choice exams, with a dashboard interface for teachers to upload exams and students to view results.",
         tags: ["NextJS", "NestJS", "MySQL", "Typescript", "Python"],
-        imageUrl: owlmarklogo,
-        githubLink: "https://github.com/UBCO-COSC499-Summer-2024/team-7-capstone-team-7-falcon.git"
+        imageUrl: opticalmarkinglogo,
+        githubLink: "https://github.com/UBCO-COSC499-Summer-2024/team-7-capstone-team-7-falcon.git",
+        gallery: ["/images/Screenshot 2025-06-08 at 7.45.50 AM.png", "/images/analyticsimg.png"]
     },
     {
         title: "SmartBites",
@@ -175,7 +180,7 @@ export const projectsData = [
             " API Gateway for accessing Panchang (Hindu calendar) and Hindu festival data. This project is under active development and aims to provide secure and efficient public access to the core Panchang API used by the QuickPanchang macOS app.",
         tags: ["Go", "Typescript", "Next JS"],
         imageUrl: panchangapilogo,
-        githubLink: "https://github.com/ParthPatel100/Website"
+        githubLink: "https://github.com/amartyadav/panchangapi-gateway.git"
     },
     {
         title: "Wildifre Analysis - Prediction Modelling",

@@ -1,22 +1,28 @@
 "use client";
+
 import { projectsData } from "@/lib/data";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import Modal from "@/components/ui/modal"; // Create this component
 
-type ProjectProps = (typeof projectsData)[number];
+// Modify ProjectProps to accept an array of image URLs
+
+export type ProjectProps = (typeof projectsData)[number] & {
+  gallery?: string[];
+};
 
 export default function Project({
   title,
   description,
   tags,
   imageUrl,
+  gallery = [],
   githubLink,
   demolink,
 }: ProjectProps) {
@@ -24,6 +30,7 @@ export default function Project({
     borderRadius: "2rem",
     border: "1px solid",
     borderColor: "rgb(0 0 0 / 0.05)",
+    cursor: "pointer",
   };
 
   const ref = useRef<HTMLElement>(null);
@@ -33,11 +40,16 @@ export default function Project({
   });
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const openGallery = (index: number) => {
+    setSelectedImageIndex(index);
+    setIsModalOpen(true);
+  };
+
   return (
-    <motion.div
-      style={{ scale: scaleProgress }}
-      className=""
-    >
+    <motion.div style={{ scale: scaleProgress }} className="">
       <section ref={ref} className="flex w-full h-full">
         <CardContainer className="mb-3 last:mb-0 h-full items-center">
           <CardBody className="bg-stone-100 grid grid-cols-2 grid-rows-4 border border-slate-200 rounded-3xl hover:shadow-2xl lg:grid-rows-2 my-5 mx-4 h-full w-full justify-center content-center align-middle items-center">
@@ -47,11 +59,12 @@ export default function Project({
             >
               <Image
                 src={imageUrl}
-                alt="Project I worked on"
+                alt="Main project image"
                 quality={95}
                 width={300}
                 height={300}
                 style={imageStyle}
+                onClick={() => openGallery(0)}
               />
             </CardItem>
 
@@ -95,6 +108,40 @@ export default function Project({
           </CardBody>
         </CardContainer>
       </section>
+
+      {isModalOpen && (
+        <Modal onClose={() => setIsModalOpen(false)}>
+          <div className="flex justify-between items-center mb-4">
+            <button
+              className="text-lg font-bold"
+              onClick={() =>
+                setSelectedImageIndex((prev) =>
+                  prev > 0 ? prev - 1 : gallery.length - 1
+                )
+              }
+            >
+              ◀
+            </button>
+            <Image
+              src={gallery[selectedImageIndex] || imageUrl}
+              alt="Gallery preview"
+              width={600}
+              height={400}
+              className="rounded-xl"
+            />
+            <button
+              className="text-lg font-bold"
+              onClick={() =>
+                setSelectedImageIndex((prev) =>
+                  prev < gallery.length - 1 ? prev + 1 : 0
+                )
+              }
+            >
+              ▶
+            </button>
+          </div>
+        </Modal>
+      )}
     </motion.div>
   );
 }
